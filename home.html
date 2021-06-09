@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Abod's app</title>
+  </head>
+
+  <body>
+    <h2>Connect to Your Device</h2>
+
+    <form action="/" method="post">
+      {% if devicesConnected %}
+        <p>Please select your Serial-Port:</p>
+
+        {% for port in devicesConnected %}
+        <input type="radio"  name="radio" value={{port}}>
+        <label for={{port}}>{{port}}</label><br>
+        {% endfor %}
+        
+        <input type="submit" value="Submit">
+     {% endif %}
+    </form>
+
+
+  </body>
+</html>
